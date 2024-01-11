@@ -95,75 +95,121 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(
-                    height: 50,
+                  SizedBox(
+                    height: currentIndex == 2 ? 38 : 50,
                   ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 12,
-                        height: 12,
-                        margin: const EdgeInsets.only(
-                          right: 10,
-                        ),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: currentIndex == 0
-                              ? blueColor
-                              : lightBackgroundColor,
-                        ),
-                      ),
-                      Container(
-                        width: 12,
-                        height: 12,
-                        margin: const EdgeInsets.only(
-                          right: 10,
-                        ),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: currentIndex == 1
-                              ? blueColor
-                              : lightBackgroundColor,
-                        ),
-                      ),
-                      Container(
-                        width: 12,
-                        height: 12,
-                        margin: const EdgeInsets.only(
-                          right: 10,
-                        ),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: currentIndex == 2
-                              ? blueColor
-                              : lightBackgroundColor,
-                        ),
-                      ),
-                      const Spacer(),
-                      Container(
-                        width: 150,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {
-                            carouselController.nextPage();
-                          },
-                          style: TextButton.styleFrom(
-                            backgroundColor: purpleColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(65),
+                  currentIndex == 2
+                      ? Column(
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              height: 50,
+                              child: TextButton(
+                                onPressed: () {
+                                  carouselController.nextPage();
+                                },
+                                style: TextButton.styleFrom(
+                                  backgroundColor: purpleColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(65),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Get Started',
+                                  style: whiteTextStyle.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: semiBold,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                          child: Text(
-                            'Continue',
-                            style: whiteTextStyle.copyWith(
-                              fontSize: 16,
-                              fontWeight: semiBold,
+                            const SizedBox(
+                              height: 20,
                             ),
-                          ),
+                            SizedBox(
+                              width: double.infinity,
+                              height: 24,
+                              child: TextButton(
+                                onPressed: () {},
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                child: Text(
+                                  'Sign In',
+                                  style: greyTextStyle.copyWith(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      : Row(
+                          children: [
+                            Container(
+                              width: 12,
+                              height: 12,
+                              margin: const EdgeInsets.only(
+                                right: 10,
+                              ),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: currentIndex == 0
+                                    ? blueColor
+                                    : lightBackgroundColor,
+                              ),
+                            ),
+                            Container(
+                              width: 12,
+                              height: 12,
+                              margin: const EdgeInsets.only(
+                                right: 10,
+                              ),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: currentIndex == 1
+                                    ? blueColor
+                                    : lightBackgroundColor,
+                              ),
+                            ),
+                            Container(
+                              width: 12,
+                              height: 12,
+                              margin: const EdgeInsets.only(
+                                right: 10,
+                              ),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: currentIndex == 2
+                                    ? blueColor
+                                    : lightBackgroundColor,
+                              ),
+                            ),
+                            const Spacer(),
+                            SizedBox(
+                              width: 150,
+                              height: 50,
+                              child: TextButton(
+                                onPressed: () {
+                                  carouselController.nextPage();
+                                },
+                                style: TextButton.styleFrom(
+                                  backgroundColor: purpleColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(65),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Continue',
+                                  style: whiteTextStyle.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: semiBold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),
