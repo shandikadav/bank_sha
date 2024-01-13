@@ -176,27 +176,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               ),
                             ),
                             const Spacer(),
-                            SizedBox(
+                            CustomFilledButton(
+                              title: 'Continue',
                               width: 150,
-                              height: 50,
-                              child: TextButton(
-                                onPressed: () {
-                                  carouselController.nextPage();
-                                },
-                                style: TextButton.styleFrom(
-                                  backgroundColor: purpleColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(65),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Continue',
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semiBold,
-                                  ),
-                                ),
-                              ),
+                              onPressed: () {
+                                carouselController.nextPage();
+                              },
                             ),
                           ],
                         ),
