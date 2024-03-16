@@ -65,7 +65,7 @@ class SignUpSetProfilePage extends StatelessWidget {
                 Container(
                   width: 120,
                   height: 120,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       fit: BoxFit.cover,
@@ -88,7 +88,7 @@ class SignUpSetProfilePage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                CustomFormField(
+                const CustomFormField(
                   title: 'Set PIN (6 digit number)',
                   obscureText: true,
                 ),
