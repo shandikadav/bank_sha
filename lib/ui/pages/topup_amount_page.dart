@@ -184,8 +184,13 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
               height: 50,
             ),
             CustomFilledButton(
-              title: 'Continue',
-              onPressed: () {},
+              title: 'Checkout Now',
+              onPressed: () async {
+                if (await Navigator.pushNamed(context, '/pin') == true) {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/topup-success', (route) => false);
+                }
+              },
             ),
             const SizedBox(
               height: 25,
