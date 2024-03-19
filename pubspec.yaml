@@ -39,6 +39,7 @@ dependencies:
   google_fonts: any
   carousel_slider: any
   url_launcher: any
+  intl: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
