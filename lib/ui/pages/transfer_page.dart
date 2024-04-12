@@ -1,5 +1,6 @@
 import 'package:bank_sha/shared/theme/theme.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
+import 'package:bank_sha/ui/widgets/transfer_recent_user_item.dart';
 import 'package:flutter/material.dart';
 
 class TransferPage extends StatelessWidget {
@@ -31,8 +32,58 @@ class TransferPage extends StatelessWidget {
             title: 'by username',
             isShowTitle: false,
           ),
+          buildRecentUsers(),
         ],
       ),
     );
   }
+}
+
+Widget buildRecentUsers() {
+  return Container(
+    margin: const EdgeInsets.only(
+      top: 40,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Recent User',
+          style: blackTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: semiBold,
+          ),
+        ),
+        const SizedBox(
+          height: 14,
+        ),
+        TransferRecentUserItem(
+          imageUrl: 'assets/img_friend1.png',
+          name: 'Yonna Jie',
+          username: 'yoenna',
+          isVerified: true,
+        ),
+        TransferRecentUserItem(
+          imageUrl: 'assets/img_friend2.png',
+          name: 'John Hi',
+          username: 'johnhi',
+          isVerified: false,
+        ),
+        TransferRecentUserItem(
+          imageUrl: 'assets/img_friend3.png',
+          name: 'Rifqi Eka',
+          username: 'rifqieh',
+          isVerified: false,
+        ),
+      ],
+    ),
+  );
+}
+
+Widget buildResult() {
+  return Container(
+    margin: const EdgeInsets.only(
+      top: 40,
+    ),
+  );
 }
